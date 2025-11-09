@@ -7,7 +7,6 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
 export function Contact() {
@@ -24,9 +23,9 @@ export function Contact() {
   }
 
   const contactInfo = [
-    { icon: Phone, text: "+1 (555) 123-4567", label: { es: "Teléfono", en: "Phone" } },
-    { icon: Mail, text: "hola@felipemanrique.com", label: { es: "Email", en: "Email" } },
-    { icon: MapPin, text: { es: "Nueva York, NY", en: "New York, NY" }, label: { es: "Ubicación", en: "Location" } },
+    { text: "+1 (555) 123-4567", label: { es: "Teléfono", en: "Phone" } },
+    { text: "hola@felipemanrique.com", label: { es: "Email", en: "Email" } },
+    { text: { es: "Nueva York, NY", en: "New York, NY" }, label: { es: "Ubicación", en: "Location" } },
   ]
 
   return (
@@ -112,27 +111,21 @@ export function Contact() {
               </div>
 
               <div className="space-y-4">
-                {contactInfo.map((info, index) => {
-                  const Icon = info.icon
-                  return (
-                    <div
-                      key={index}
-                      className="flex items-center gap-4 p-4 rounded-lg hover:bg-secondary/50 transition-all duration-300 hover:translate-x-2 group"
-                    >
-                      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-all duration-300 group-hover:scale-110">
-                        <Icon className="h-5 w-5 text-accent transition-transform duration-300 group-hover:rotate-12" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
-                          {t(info.label)}
-                        </p>
-                        <p className="text-sm font-semibold">
-                          {typeof info.text === "string" ? info.text : t(info.text)}
-                        </p>
-                      </div>
+                {contactInfo.map((info, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 p-4 rounded-lg hover:bg-secondary/50 transition-all duration-300 hover:translate-x-2 group border-l-2 border-accent/20 hover:border-accent"
+                  >
+                    <div className="flex flex-col flex-1">
+                      <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-1">
+                        {t(info.label)}
+                      </p>
+                      <p className="text-sm font-semibold">
+                        {typeof info.text === "string" ? info.text : t(info.text)}
+                      </p>
                     </div>
-                  )
-                })}
+                  </div>
+                ))}
               </div>
 
               <div className="pt-8 border-t border-border">

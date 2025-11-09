@@ -1,14 +1,17 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export function CustomCursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const cursorRef = useRef<HTMLDivElement>(null)
   const [isHovering, setIsHovering] = useState(false)
 
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY })
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${e.clientX}px`
+        cursorRef.current.style.top = `${e.clientY}px`
+      }
     }
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -29,14 +32,5 @@ export function CustomCursor() {
     }
   }, [])
 
-  return (
-    <div
-      className={`custom-cursor ${isHovering ? "hover" : ""}`}
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        transform: "translate(-50%, -50%)",
-      }}
-    />
-  )
+  return <div ref={cursorRef} className={`custom-cursor ${isHovering ? "hover" : ""}`} />
 }

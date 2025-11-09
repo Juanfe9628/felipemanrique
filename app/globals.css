@@ -16,13 +16,13 @@
   --secondary-foreground: oklch(0.15 0 0);
   --muted: oklch(0.55 0 0);
   --muted-foreground: oklch(0.45 0 0);
-  --accent: oklch(0.52 0.08 230);
+  --accent: oklch(0.25 0 0);
   --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.92 0 0);
   --input: oklch(0.92 0 0);
-  --ring: oklch(0.52 0.08 230);
+  --ring: oklch(0.25 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -52,8 +52,8 @@
   --secondary-foreground: oklch(0.95 0 0);
   --muted: oklch(0.2 0 0);
   --muted-foreground: oklch(0.6 0 0);
-  --accent: oklch(0.5 0.15 30);
-  --accent-foreground: oklch(0.95 0 0);
+  --accent: oklch(0.8 0 0);
+  --accent-foreground: oklch(0.12 0 0);
   --destructive: oklch(0.5 0.2 27);
   --destructive-foreground: oklch(0.95 0 0);
   --border: oklch(0.2 0 0);
@@ -75,7 +75,8 @@
 }
 
 @theme inline {
-  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  /* Updated font variable to use Outfit */
+  --font-sans: "Outfit", "Outfit Fallback", system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -124,33 +125,48 @@
   html {
     scroll-behavior: smooth;
   }
-  * {
-    cursor: none;
-  }
-  a,
-  button,
-  input,
-  textarea,
-  select {
-    cursor: none;
+  /* Fixed cursor visibility - made it visible on desktop only */
+  @media (min-width: 768px) {
+    * {
+      cursor: none !important;
+    }
+    a,
+    button,
+    input,
+    textarea,
+    select {
+      cursor: none !important;
+    }
   }
 }
 
+/* Updated cursor with thinner border and grayscale color, fixed movement lag */
 .custom-cursor {
   position: fixed;
-  width: 20px;
-  height: 20px;
-  border: 2px solid oklch(0.52 0.08 230);
+  width: 12px;
+  height: 12px;
+  border: 1px solid oklch(0.25 0 0);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.15s ease, width 0.15s ease, height 0.15s ease;
-  mix-blend-mode: difference;
+  transition: width 0.2s ease, height 0.2s ease, border-width 0.2s ease, background 0.2s ease;
+  background: transparent;
+  display: none;
+  transform: translate(-50%, -50%);
+  will-change: left, top;
+}
+
+@media (min-width: 768px) {
+  .custom-cursor {
+    display: block;
+  }
 }
 
 .custom-cursor.hover {
-  transform: scale(2);
-  background: oklch(0.52 0.08 230 / 0.2);
+  width: 40px;
+  height: 40px;
+  border-width: 1px;
+  background: oklch(0.25 0 0 / 0.08);
 }
 
 .geometric-bg {
@@ -190,6 +206,18 @@
   }
   50% {
     transform: translateY(-20px);
+  }
+}
+
+/* Added fadeInUp animation for menu items */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
