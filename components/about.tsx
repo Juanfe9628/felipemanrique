@@ -1,10 +1,31 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
 
 export function About() {
   const { t } = useLanguage()
+  const titleRef = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-reveal")
+          }
+        })
+      },
+      { threshold: 0.2 },
+    )
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section id="about" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#1a1d20" }}>
@@ -21,9 +42,12 @@ export function About() {
           </div>
 
           <div>
-            <div className="inline-block px-4 py-1 bg-white/10 text-white text-xs font-bold uppercase tracking-wide rounded mb-6">
+            <h3
+              ref={titleRef}
+              className="text-base font-semibold uppercase tracking-[0.3em] mb-8 text-gray-200 opacity-0 transition-all duration-1000"
+            >
               {t({ es: "Acerca de Mí", en: "About Me" })}
-            </div>
+            </h3>
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-balance leading-tight text-white">
               {t({ es: "HAGAMOS COSAS INCREÍBLES JUNTOS.", en: "LET'S DO AWESOME THINGS TOGETHER." })}
             </h2>

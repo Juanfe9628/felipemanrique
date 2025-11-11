@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -11,11 +11,31 @@ import { useLanguage } from "@/lib/language-context"
 
 export function Contact() {
   const { t } = useLanguage()
+  const titleRef = useRef<HTMLHeadingElement>(null)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   })
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-reveal")
+          }
+        })
+      },
+      { threshold: 0.2 },
+    )
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -32,13 +52,13 @@ export function Contact() {
     <section id="contact" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
-            <div className="inline-block px-4 py-1 bg-accent text-accent-foreground text-xs font-bold uppercase tracking-wide rounded mb-6">
+          <div className="mb-16">
+            <h3
+              ref={titleRef}
+              className="text-base font-semibold uppercase tracking-[0.3em] mb-8 text-foreground opacity-0 transition-all duration-1000"
+            >
               {t({ es: "Contacto", en: "Contact" })}
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              {t({ es: "PONTE EN CONTACTO", en: "GET IN TOUCH" })}
-            </h2>
+            </h3>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -98,7 +118,6 @@ export function Contact() {
               </form>
             </Card>
 
-            {/* Contact Info */}
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold mb-4">{t({ es: "Trabajemos Juntos", en: "Let's Work Together" })}</h3>

@@ -46,12 +46,12 @@ export function Hero() {
           </div>
 
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-lg aspect-[4/5] transition-all duration-700 hover:scale-[1.02] group">
+            <div className="relative w-full max-w-sm aspect-[3/4] transition-all duration-700 hover:scale-[1.02] group">
               <div className="absolute inset-0 bg-accent/10 rounded-2xl transform group-hover:rotate-3 transition-transform duration-700"></div>
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Felipe%20Manrique%20photo%20BN-CyChTPtg6oxtDMuykQUynV8NN5uArP.jpg"
                 alt="Felipe Manrique"
-                className="relative w-full h-full object-cover rounded-2xl shadow-2xl"
+                className="relative w-full h-full object-cover object-top rounded-2xl shadow-2xl"
               />
             </div>
           </div>
