@@ -13,7 +13,9 @@ export function About() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-reveal")
+            entry.target.classList.add("visible")
+          } else {
+            entry.target.classList.remove("visible")
           }
         })
       },
@@ -28,7 +30,7 @@ export function About() {
   }, [])
 
   return (
-    <section id="about" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#1a1d20" }}>
+    <section id="about" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#1a1d20" }}>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="flex justify-center lg:justify-start">
@@ -44,7 +46,7 @@ export function About() {
           <div>
             <h3
               ref={titleRef}
-              className="text-base font-semibold uppercase tracking-[0.3em] mb-8 text-gray-200 opacity-0 transition-all duration-1000"
+              className="text-xl font-bold uppercase tracking-[0.1em] mb-8 text-gray-200 animate-reveal transition-all duration-1000"
             >
               {t({ es: "Acerca de Mí", en: "About Me" })}
             </h3>

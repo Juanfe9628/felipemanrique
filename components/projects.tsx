@@ -1,8 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
 import { X } from "lucide-react"
 
@@ -154,80 +152,83 @@ export function Projects() {
   }, [selectedProject, currentImageIndex])
 
   return (
-    <section id="projects" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <h3
               ref={titleRef}
-              className="text-xl font-bold uppercase tracking-[0.3em] mb-8 text-foreground animate-reveal"
+              className="text-xl font-bold uppercase tracking-[0.1em] mb-8 text-foreground animate-reveal transition-all duration-1000"
             >
               {t({ es: "Portafolio", en: "Portfolio" })}
             </h3>
           </div>
 
           <div className="flex flex-wrap gap-4 mb-12">
-            <Button
-              variant={activeFilter === "all" ? "default" : "outline"}
+            <button
               onClick={() => setActiveFilter("all")}
-              className={`transition-all duration-300 ${
-                activeFilter === "all" ? "bg-accent hover:bg-accent/90 scale-105" : "hover:scale-105"
+              className={`text-sm uppercase tracking-wider px-6 py-2 transition-all duration-300 ${
+                activeFilter === "all"
+                  ? "text-foreground border-b-2 border-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {t({ es: "Todo el Trabajo", en: "All Work" })}
-            </Button>
-            <Button
-              variant={activeFilter === "project" ? "default" : "outline"}
+            </button>
+            <button
               onClick={() => setActiveFilter("project")}
-              className={`transition-all duration-300 ${
-                activeFilter === "project" ? "bg-accent hover:bg-accent/90 scale-105" : "hover:scale-105"
+              className={`text-sm uppercase tracking-wider px-6 py-2 transition-all duration-300 ${
+                activeFilter === "project"
+                  ? "text-foreground border-b-2 border-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {t({ es: "Proyectos", en: "Projects" })}
-            </Button>
-            <Button
-              variant={activeFilter === "collaboration" ? "default" : "outline"}
+            </button>
+            <button
               onClick={() => setActiveFilter("collaboration")}
-              className={`transition-all duration-300 ${
-                activeFilter === "collaboration" ? "bg-accent hover:bg-accent/90 scale-105" : "hover:scale-105"
+              className={`text-sm uppercase tracking-wider px-6 py-2 transition-all duration-300 ${
+                activeFilter === "collaboration"
+                  ? "text-foreground border-b-2 border-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {t({ es: "Colaboraciones", en: "Collaborations" })}
-            </Button>
+            </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {filteredProjects.map((project) => (
-              <Card
+              <div
                 key={project.id}
                 onClick={() => {
                   setSelectedProject(project)
                   setCurrentImageIndex(0)
                 }}
-                className="overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer group bg-background hover:-translate-y-2"
+                className="cursor-pointer group"
               >
-                <div className="aspect-video overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden mb-4">
                   <img
                     src={project.images[0] || "/placeholder.svg"}
                     alt={t(project.title)}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs text-muted-foreground font-medium">{project.year}</span>
-                    <span className="inline-block px-2 py-1 text-xs font-medium bg-secondary rounded transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3 text-xs text-muted-foreground uppercase tracking-wider">
+                    <span>{project.year}</span>
+                    <span>•</span>
+                    <span>
                       {project.category === "collaboration"
                         ? t({ es: "Colaboración", en: "Collaboration" })
                         : t({ es: "Proyecto", en: "Project" })}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="text-lg font-medium group-hover:text-muted-foreground transition-colors">
                     {t(project.title)}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">{t(project.description)}</p>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>

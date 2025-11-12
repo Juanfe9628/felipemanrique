@@ -221,32 +221,32 @@
   }
 }
 
-/* Adding scroll reveal animation for section titles */
-/* Updated reveal animation to continuously trigger on scroll */
-@keyframes revealText {
+/* Added fadeIn animation for loading screen */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
-    letter-spacing: 0.5em;
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+  }
+}
+
+/* Fixed title animation to stay visible and only animate letter-spacing */
+@keyframes revealText {
+  from {
+    letter-spacing: 0.1em;
+  }
+  to {
     letter-spacing: 0.3em;
   }
 }
 
-/* Updated to restart animation each time element enters viewport */
 .animate-reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  letter-spacing: 0.5em;
-  transition: opacity 0.8s ease, transform 0.8s ease, letter-spacing 0.8s ease;
+  letter-spacing: 0.1em;
+  transition: letter-spacing 0.8s ease;
 }
 
 .animate-reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
   letter-spacing: 0.3em;
 }
 

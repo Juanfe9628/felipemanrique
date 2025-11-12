@@ -3,10 +3,9 @@
 import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
 
 export function Contact() {
@@ -23,7 +22,9 @@ export function Contact() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-reveal")
+            entry.target.classList.add("visible")
+          } else {
+            entry.target.classList.remove("visible")
           }
         })
       },
@@ -49,20 +50,20 @@ export function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <h3
               ref={titleRef}
-              className="text-base font-semibold uppercase tracking-[0.3em] mb-8 text-foreground opacity-0 transition-all duration-1000"
+              className="text-xl font-bold uppercase tracking-[0.1em] mb-8 text-foreground visible transition-all duration-1000"
             >
               {t({ es: "Contacto", en: "Contact" })}
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card className="p-8 bg-background hover:shadow-2xl transition-all duration-500">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0">
+            <div className="lg:pr-12 lg:border-r border-border/30">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold mb-2">
@@ -75,7 +76,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
-                    className="h-12 transition-all duration-300 focus:scale-[1.02]"
+                    className="h-12 transition-all duration-300 focus:scale-[1.02] border-border/50"
                   />
                 </div>
                 <div>
@@ -89,7 +90,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
-                    className="h-12 transition-all duration-300 focus:scale-[1.02]"
+                    className="h-12 transition-all duration-300 focus:scale-[1.02] border-border/50"
                   />
                 </div>
                 <div>
@@ -106,19 +107,19 @@ export function Contact() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
-                    className="transition-all duration-300 focus:scale-[1.02]"
+                    className="transition-all duration-300 focus:scale-[1.02] border-border/50"
                   />
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-12 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-12 rounded-full transition-all duration-300 hover:scale-105"
                 >
                   {t({ es: "ENVIAR MENSAJE", en: "SEND MESSAGE" })}
                 </Button>
               </form>
-            </Card>
+            </div>
 
-            <div className="space-y-8">
+            <div className="lg:pl-12 space-y-8">
               <div>
                 <h3 className="text-2xl font-bold mb-4">{t({ es: "Trabajemos Juntos", en: "Let's Work Together" })}</h3>
                 <p className="text-base text-muted-foreground leading-relaxed mb-8">

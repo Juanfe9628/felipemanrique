@@ -48,7 +48,9 @@ export function Services() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-reveal")
+            entry.target.classList.add("visible")
+          } else {
+            entry.target.classList.remove("visible")
           }
         })
       },
@@ -63,48 +65,48 @@ export function Services() {
   }, [])
 
   return (
-    <section id="services" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section id="services" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-12">
             <h3
               ref={titleRef}
-              className="text-xl font-bold uppercase tracking-[0.3em] mb-8 text-foreground opacity-0 transition-all duration-1000"
+              className="text-xl font-bold uppercase tracking-[0.1em] mb-8 text-foreground animate-reveal transition-all duration-1000"
             >
               {t({ es: "Servicios", en: "Services" })}
             </h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 border-t border-border">
+          <div className="flex flex-col md:flex-row border-t border-border/30">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`relative overflow-hidden transition-all duration-500 ease-in-out cursor-pointer border-r border-border last:border-r-0 ${
-                  hoveredIndex === index ? "bg-secondary/50" : "bg-background"
+                className={`relative overflow-hidden transition-all duration-700 ease-in-out cursor-pointer border-r border-border/30 last:border-r-0 flex flex-col ${
+                  hoveredIndex === index ? "bg-secondary/50 md:flex-[2]" : "bg-background md:flex-1"
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                style={{ minHeight: "500px" }}
+                style={{ minHeight: "250px" }}
               >
-                <div className="p-8 h-full flex flex-col justify-between">
+                <div className="p-6 h-full flex flex-col justify-between">
                   <div>
-                    <div className="text-5xl font-bold text-gray-200 mb-6 transition-all duration-500">
+                    <div className="text-4xl font-bold text-gray-300 mb-4 transition-all duration-700">
                       {service.number}
                     </div>
                     <h3
-                      className={`text-xl font-bold mb-4 transition-all duration-500 ${
+                      className={`text-lg font-bold mb-4 transition-all duration-700 ${
                         hoveredIndex === index ? "text-accent" : ""
                       }`}
                     >
                       {t(service.title)}
                     </h3>
                   </div>
-                  <p
-                    className={`text-muted-foreground leading-relaxed text-sm transition-all duration-500 ${
-                      hoveredIndex === index ? "opacity-100" : "opacity-0"
+                  <div
+                    className={`transition-all duration-700 overflow-hidden ${
+                      hoveredIndex === index ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
                     }`}
                   >
-                    {t(service.description)}
-                  </p>
+                    <p className="text-muted-foreground leading-relaxed text-sm">{t(service.description)}</p>
+                  </div>
                 </div>
               </div>
             ))}
