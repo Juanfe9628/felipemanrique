@@ -16,6 +16,8 @@ export function Contact() {
     email: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,15 +40,35 @@ export function Contact() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitSuccess(true)
+        setFormData({ name: "", email: "", message: "" })
+        setTimeout(() => setSubmitSuccess(false), 5000)
+      }
+    } catch (error) {
+      console.error("Error sending message:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
-    { text: "+1 (555) 123-4567", label: { es: "Teléfono", en: "Phone" } },
-    { text: "hola@felipemanrique.com", label: { es: "Email", en: "Email" } },
-    { text: { es: "Nueva York, NY", en: "New York, NY" }, label: { es: "Ubicación", en: "Location" } },
+    { text: "felipemanrique.fma@gmail.com", label: { es: "Email", en: "Email" } },
+    { text: "+39 3665420617", label: { es: "Teléfono", en: "Phone" } },
+    { text: { es: "Cali, Colombia", en: "Cali, Colombia" }, label: { es: "Ubicación", en: "Location" } },
   ]
 
   return (
@@ -56,7 +78,7 @@ export function Contact() {
           <div className="mb-16">
             <h3
               ref={titleRef}
-              className="text-xl font-bold uppercase tracking-[0.1em] mb-8 text-foreground visible transition-all duration-1000"
+              className="text-xl font-bold uppercase mb-8 text-foreground animate-reveal transition-all duration-1000"
             >
               {t({ es: "Contacto", en: "Contact" })}
             </h3>
@@ -110,11 +132,19 @@ export function Contact() {
                     className="transition-all duration-300 focus:scale-[1.02] border-border/50"
                   />
                 </div>
+                {submitSuccess && (
+                  <p className="text-sm text-green-600 dark:text-green-400">
+                    {t({ es: "¡Mensaje enviado con éxito!", en: "Message sent successfully!" })}
+                  </p>
+                )}
                 <Button
                   type="submit"
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-12 rounded-full transition-all duration-300 hover:scale-105"
+                  disabled={isSubmitting}
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-12 rounded-full transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {t({ es: "ENVIAR MENSAJE", en: "SEND MESSAGE" })}
+                  {isSubmitting
+                    ? t({ es: "ENVIANDO...", en: "SENDING..." })
+                    : t({ es: "ENVIAR MENSAJE", en: "SEND MESSAGE" })}
                 </Button>
               </form>
             </div>

@@ -7,89 +7,102 @@ import { X } from "lucide-react"
 const projects = [
   {
     id: 1,
-    title: { es: "Complejo Residencial Moderno", en: "Modern Residential Complex" },
+    title: { es: "Bosco della Musica", en: "Bosco della Musica" },
     description: {
-      es: "Desarrollo residencial sostenible con 50 unidades, espacios verdes y amenidades comunitarias.",
-      en: "Sustainable residential development with 50 units, green spaces and community amenities.",
+      es: "El proyecto consiste en la creación del nuevo Conservatorio de Música de Milán, inspirado en el bosque circundante y sus formas orgánicas. El diseño refleja la influencia de la naturaleza en las artes, haciendo eco de los orígenes de la música como emulación de sonidos naturales utilizados en ceremonias. Busca revitalizar hipotéticamente un área inaccesible, transformándola en un espacio abierto e inclusivo que cataliza la regeneración.",
+      en: "The project consists in the creation of the new Milan Music Conservatory, inspired by the surrounding forest and its organic forms. The design reflects nature's influence on the arts, echoing music's origins as an emulation of natural sounds used in ceremonies. It aims to hypothetically revitalize an inaccessible area, transforming it into an open, inclusive space that catalyzes regeneration.",
     },
-    category: "project",
-    year: "2023-2024",
-    location: { es: "Bogotá, Colombia", en: "Bogotá, Colombia" },
-    cost: "$12M USD",
+    contribution: {
+      es: "Coordinación BIM (proyecto completo), coordinación espacial, diseño técnico del Edificio B",
+      en: "BIM Coordination (entire project), spatial coordination, technical design of Building B",
+    },
+    phase: { es: "Fase de licitación", en: "Bidding phase" },
+    category: "collaboration",
+    year: "2024",
+    location: { es: "Milán, Italia", en: "Milan, Italy" },
+    cost: "€50,000,000",
+    collaboration: "SETTANTA7 + GPA + STAIN",
+    area: "21,000 sqm",
     images: [
-      "/modern-residential-architecture.jpg",
-      "/architect-working-on-designs.jpg",
-      "/sustainable-housing-design.jpg",
+      "/images/bdm-01.jpg",
+      "/images/bdm-02.jpg",
+      "/images/bdm-03.jpg",
+      "/images/bdm-04.jpg",
+      "/images/bdm-05.jpg",
+      "/images/bdm-06.jpg",
     ],
   },
   {
     id: 2,
-    title: { es: "Sede Corporativa", en: "Corporate Headquarters" },
+    title: { es: "Escuela Castel Volturno", en: "Castel Volturno School" },
     description: {
-      es: "Diseño de edificio de oficinas contemporáneo que enfatiza la luz natural y espacios colaborativos.",
-      en: "Contemporary office building design emphasizing natural light and collaborative spaces.",
+      es: "El proyecto consiste en la creación del complejo escolar más grande de Italia, con cerca de 15,000 m², en terreno recuperado de la mafia, y cubriendo aproximadamente 69,894 m². Tendrá capacidad para 1,800 estudiantes desde jardín infantil hasta niveles secundarios. El diseño, inspirado por una gota de agua en la tierra, integra el Instituto Garibaldi, el Instituto Centro Volturno y un gimnasio. El diseño presenta elementos espaciales continuos y fluidos, que recuerdan el flujo incesante del río Volturno.",
+      en: "The project consists of the creation of the largest school complex in Italy, with nearly 15,000 m², on land reclaimed from the mafia, and covering approximately 69,894 m². It will have capacity for 1,800 students from kindergarten to Secondary levels. The design, inspired by a drop of water on earth, integrates the Garibaldi Institute, the Castel Volturno Centro Institute and a gym. The design features continuous and fluid spatial elements, reminiscent of the incessant flow of the Volturno River.",
     },
-    category: "project",
-    year: "2024",
-    location: { es: "Medellín, Colombia", en: "Medellín, Colombia" },
-    cost: "$8.5M USD",
-    images: ["/corporate-office-building.png", "/urban-planning-design.jpg", "/modern-residential-architecture.jpg"],
-  },
-  {
-    id: 3,
-    title: { es: "Renovación de Centro Cultural", en: "Cultural Center Renovation" },
-    description: {
-      es: "Restauración de edificio histórico y reutilización adaptativa para programas culturales comunitarios.",
-      en: "Historic building restoration and adaptive reuse for community cultural programs.",
+    contribution: {
+      es: "Coordinación BIM, coordinación espacial, diseño técnico y diseño paramétrico de fachada",
+      en: "BIM Coordination, spatial coordination, technical design and facade parametric design",
     },
-    category: "project",
+    phase: { es: "Construcción en curso", en: "Ongoing construction" },
+    category: "collaboration",
     year: "2023",
-    location: { es: "Cartagena, Colombia", en: "Cartagena, Colombia" },
-    cost: "$5.2M USD",
+    location: { es: "Castel Volturno, Italia", en: "Castel Volturno, Italy" },
+    cost: "€28,000,000",
+    collaboration: "SETTANTA7 + GPA + PERILLO",
+    area: "15,000 sqm",
     images: [
-      "/cultural-center-architecture.jpg",
-      "/modern-residential-architecture.jpg",
-      "/luxury-resort-architecture.jpg",
+      "/images/csl-01.jpg",
+      "/images/csl-02.jpg",
+      "/images/csl-03.jpg",
+      "/images/csl-04.jpg",
+      "/images/csl-05.jpg",
+      "/images/csl-06.jpg",
     ],
   },
   {
-    id: 4,
-    title: { es: "Iniciativa de Planificación Urbana", en: "Urban Planning Initiative" },
+    id: 3,
+    title: { es: "Re-Start Scampia", en: "Re-Start Scampia" },
     description: {
-      es: "Proyecto de planificación maestra colaborativa con funcionarios de la ciudad para revitalización del centro.",
-      en: "Collaborative master planning project with city officials for downtown revitalization.",
+      es: "El proyecto ReStart Scampia transforma los 69,000 m² del antiguo Lotto M en un eco-distrito sostenible con tres edificios residenciales. Como parte de un plan de regeneración urbana más amplio, reemplaza el deteriorado Vele di Scampia con viviendas modernas y energéticamente eficientes. El diseño integra espacios verdes, zonas peatonales y áreas públicas, fomentando la interacción social. El proyecto aspira a ser un símbolo de renacimiento para el barrio, convirtiendo un área históricamente marcada por el deterioro urbano en un modelo de ciudad inteligente, resiliente e inclusiva.",
+      en: "The ReStart Scampia project transforms the 69,000 m² former Lotto M into a sustainable eco-district with three residential buildings. Part of a broader urban regeneration plan, it replaces the deteriorated Vele di Scampia with modern, energy-efficient housing. The design integrates green spaces, pedestrian areas, and public areas, fostering social interaction. The project aims to be a symbol of rebirth for the neighborhood, turning an area historically marked by urban decay into a model of a smart, resilient, and inclusive city.",
     },
+    contribution: {
+      es: "Coordinación BIM (proyecto completo), coordinación espacial, diseño técnico del Edificio A3",
+      en: "BIM Coordination (entire project), spatial coordination, technical design of Building A3",
+    },
+    phase: { es: "Construcción en curso", en: "Ongoing construction" },
     category: "collaboration",
     year: "2024",
-    location: { es: "Cali, Colombia", en: "Cali, Colombia" },
-    cost: "$15M USD",
-    images: ["/urban-planning-design.jpg", "/corporate-office-building.png", "/cultural-center-architecture.jpg"],
+    location: { es: "Nápoles, Italia", en: "Naples, Italy" },
+    cost: "€30,000,000",
+    collaboration: "SETTANTA7 + HB + PERILLO",
+    area: "13,000 sqm",
+    images: ["/images/scampia-01.jpg", "/images/scampia-02.jpg", "/images/scampia-03.jpg", "/images/scampia-04.jpg"],
   },
   {
-    id: 5,
-    title: { es: "Asociación con Estudio de Diseño", en: "Design Studio Partnership" },
+    id: 4,
+    title: { es: "Escuela Carlo Urbani", en: "Carlo Urbani School" },
     description: {
-      es: "Empresa conjunta con firma de diseño internacional en desarrollo de resort de lujo.",
-      en: "Joint venture with international design firm on luxury resort development.",
+      es: 'El proyecto imagina el nuevo Complejo Escolar "Carlo Urbani", Campus "Luigi Einaudi", en Porto Sant\'Elpidio, reemplazando la instalación existente con un centro educativo moderno para aproximadamente 830 estudiantes. Reúne aulas, laboratorios, oficinas, bibliotecas y espacios recreativos dentro de tres edificios interconectados. Diseñado como un hito cívico, el complejo extiende su rol más allá de la educación al integrar instalaciones deportivas, áreas de eventos y plazas públicas abiertas después del horario escolar. La arquitectura armoniza con el contexto urbano y natural, mejorando el corredor verde de la ciudad y conectándose sin problemas con las calles circundantes.',
+      en: 'The project envisions the new "Carlo Urbani" School Complex, "Luigi Einaudi" Campus, in Porto Sant\'Elpidio, replacing the existing facility with a modern educational hub for about 830 students. It brings together classrooms, laboratories, offices, libraries, and recreational spaces within three interconnected buildings. Designed as a civic landmark, the complex extends its role beyond education by integrating sports facilities, event areas, and public plazas open after school hours. The architecture harmonizes with the urban and natural context, enhancing the city\'s green corridor and connecting seamlessly with the surrounding streets.',
     },
-    category: "collaboration",
-    year: "2023",
-    location: { es: "Santa Marta, Colombia", en: "Santa Marta, Colombia" },
-    cost: "$22M USD",
-    images: ["/luxury-resort-architecture.jpg", "/sustainable-housing-design.jpg", "/architect-working-on-designs.jpg"],
-  },
-  {
-    id: 6,
-    title: { es: "Investigación de Vivienda Sostenible", en: "Sustainable Housing Research" },
-    description: {
-      es: "Colaboración académica en soluciones innovadoras de vivienda ecológica.",
-      en: "Academic collaboration on innovative eco-friendly housing solutions.",
+    contribution: {
+      es: "Supervisión de obra, coordinación BIM, coordinación de contratistas, detalle de construcción y soporte en control de costos",
+      en: "Site supervision, BIM coordination, contractors' coordination, construction detailing, and support in cost control",
     },
+    phase: { es: "Construcción en curso", en: "Ongoing construction" },
     category: "collaboration",
-    year: "2023",
-    location: { es: "Manizales, Colombia", en: "Manizales, Colombia" },
-    cost: "$3.8M USD",
-    images: ["/sustainable-housing-design.jpg", "/modern-residential-architecture.jpg", "/urban-planning-design.jpg"],
+    year: "2025",
+    location: { es: "Porto Sant'Elpidio, Italia", en: "Porto Sant'Elpidio, Italy" },
+    cost: "€20,000,000",
+    collaboration: "SETTANTA7 + HB + PERILLO",
+    area: "10,000 sqm",
+    images: [
+      "/images/carlo-urbani-01.jpg",
+      "/images/carlo-urbani-02.jpg",
+      "/images/carlo-urbani-03.jpg",
+      "/images/carlo-urbani-04.jpg",
+    ],
   },
 ]
 
@@ -97,6 +110,8 @@ export function Projects() {
   const [activeFilter, setActiveFilter] = useState<"all" | "project" | "collaboration">("all")
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isImageLoading, setIsImageLoading] = useState(false)
+  const imageCache = useRef<Set<string>>(new Set())
   const { t } = useLanguage()
   const titleRef = useRef<HTMLHeadingElement>(null)
 
@@ -122,6 +137,37 @@ export function Projects() {
 
     return () => observer.disconnect()
   }, [])
+
+  useEffect(() => {
+    if (selectedProject) {
+      selectedProject.images.forEach((src) => {
+        if (src && !imageCache.current.has(src)) {
+          const img = new Image()
+          img.src = src
+          img.onload = () => {
+            imageCache.current.add(src)
+          }
+        }
+      })
+    }
+  }, [selectedProject])
+
+  useEffect(() => {
+    if (selectedProject) {
+      const currentSrc = selectedProject.images[currentImageIndex]
+      if (!imageCache.current.has(currentSrc)) {
+        setIsImageLoading(true)
+        const img = new Image()
+        img.src = currentSrc
+        img.onload = () => {
+          imageCache.current.add(currentSrc)
+          setIsImageLoading(false)
+        }
+      } else {
+        setIsImageLoading(false)
+      }
+    }
+  }, [selectedProject, currentImageIndex])
 
   const handlePrevImage = () => {
     if (selectedProject) {
@@ -158,7 +204,7 @@ export function Projects() {
           <div className="mb-12">
             <h3
               ref={titleRef}
-              className="text-xl font-bold uppercase tracking-[0.1em] mb-8 text-foreground animate-reveal transition-all duration-1000"
+              className="text-xl font-bold uppercase mb-8 text-foreground animate-reveal transition-all duration-1000"
             >
               {t({ es: "Portafolio", en: "Portfolio" })}
             </h3>
@@ -211,6 +257,7 @@ export function Projects() {
                   <img
                     src={project.images[0] || "/placeholder.svg"}
                     alt={t(project.title)}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -245,7 +292,6 @@ export function Projects() {
           </button>
 
           <div className="w-full h-full max-w-7xl flex flex-col md:flex-row gap-8 overflow-auto">
-            {/* Carousel */}
             <div className="flex-1 flex items-center justify-center relative">
               <button
                 onClick={handlePrevImage}
@@ -255,11 +301,18 @@ export function Projects() {
                 ←
               </button>
 
-              <div className="w-full h-full flex items-center justify-center">
+              <div className="w-full h-full flex items-center justify-center relative">
+                {isImageLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-8 h-8 border-2 border-foreground/20 border-t-foreground rounded-full animate-spin" />
+                  </div>
+                )}
                 <img
+                  key={currentImageIndex}
                   src={selectedProject.images[currentImageIndex] || "/placeholder.svg"}
                   alt={`${t(selectedProject.title)} - Image ${currentImageIndex + 1}`}
-                  className="max-w-full max-h-[70vh] object-contain"
+                  className="max-w-full max-h-[70vh] object-contain transition-opacity duration-200"
+                  style={{ opacity: isImageLoading ? 0 : 1 }}
                 />
               </div>
 
@@ -271,7 +324,6 @@ export function Projects() {
                 →
               </button>
 
-              {/* Image indicators */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                 {selectedProject.images.map((_, index) => (
                   <button
@@ -286,7 +338,6 @@ export function Projects() {
               </div>
             </div>
 
-            {/* Project Details */}
             <div className="md:w-80 flex flex-col gap-6 py-8">
               <div>
                 <h2 className="text-3xl font-bold mb-2">{t(selectedProject.title)}</h2>
@@ -309,6 +360,38 @@ export function Projects() {
                   </p>
                   <p className="font-medium">{t(selectedProject.location)}</p>
                 </div>
+
+                {selectedProject.collaboration && (
+                  <div className="border-l-2 border-accent pl-4">
+                    <p className="text-muted-foreground uppercase text-xs mb-1">
+                      {t({ es: "Colaboración con", en: "Collaboration with" })}
+                    </p>
+                    <p className="font-medium">{selectedProject.collaboration}</p>
+                  </div>
+                )}
+
+                {selectedProject.contribution && (
+                  <div className="border-l-2 border-accent pl-4">
+                    <p className="text-muted-foreground uppercase text-xs mb-1">
+                      {t({ es: "Contribución al proyecto", en: "Project contribution" })}
+                    </p>
+                    <p className="font-medium">{t(selectedProject.contribution)}</p>
+                  </div>
+                )}
+
+                {selectedProject.phase && (
+                  <div className="border-l-2 border-accent pl-4">
+                    <p className="text-muted-foreground uppercase text-xs mb-1">{t({ es: "Fase", en: "Phase" })}</p>
+                    <p className="font-medium">{t(selectedProject.phase)}</p>
+                  </div>
+                )}
+
+                {selectedProject.area && (
+                  <div className="border-l-2 border-accent pl-4">
+                    <p className="text-muted-foreground uppercase text-xs mb-1">{t({ es: "Área", en: "Area" })}</p>
+                    <p className="font-medium">{selectedProject.area}</p>
+                  </div>
+                )}
 
                 <div className="border-l-2 border-accent pl-4">
                   <p className="text-muted-foreground uppercase text-xs mb-1">{t({ es: "Costo", en: "Cost" })}</p>

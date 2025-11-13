@@ -29,24 +29,34 @@ export function About() {
     return () => observer.disconnect()
   }, [])
 
+  const handleDownloadCV = () => {
+    const link = document.createElement("a")
+    link.href = "/Felipe-Manrique-CV.pdf"
+    link.download = "Felipe-Manrique-CV.pdf"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <section id="about" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#1a1d20" }}>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative w-full max-w-md aspect-square overflow-hidden rounded-lg group">
-              <img
-                src="/architect-working-on-designs.jpg"
-                alt="Felipe Manrique trabajando"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+          <div className="flex items-center justify-center lg:justify-start">
+            <div className="relative flex items-center justify-center w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/20">
+              <div className="text-center">
+                <div className="text-7xl md:text-8xl font-thin text-white tracking-[0.15em]">FMA</div>
+                <div className="text-xs md:text-sm font-normal tracking-[0.3em] text-gray-400 uppercase mt-4">
+                  Felipe Manrique Arquitecto
+                </div>
+              </div>
             </div>
           </div>
 
           <div>
             <h3
               ref={titleRef}
-              className="text-xl font-bold uppercase tracking-[0.1em] mb-8 text-gray-200 animate-reveal transition-all duration-1000"
+              className="text-xl font-bold uppercase mb-8 text-gray-200 animate-reveal transition-all duration-1000"
             >
               {t({ es: "Acerca de Mí", en: "About Me" })}
             </h3>
@@ -73,7 +83,10 @@ export function About() {
               </p>
             </div>
 
-            <Button className="bg-white hover:bg-gray-100 text-gray-900 font-semibold px-8 py-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Button
+              onClick={handleDownloadCV}
+              className="bg-white hover:bg-gray-100 text-gray-900 font-semibold px-8 py-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
               <span className="mr-2">↓</span>
               {t({ es: "DESCARGAR CV", en: "DOWNLOAD CV" })}
             </Button>

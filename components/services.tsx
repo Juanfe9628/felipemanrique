@@ -71,7 +71,7 @@ export function Services() {
           <div className="mb-12">
             <h3
               ref={titleRef}
-              className="text-xl font-bold uppercase tracking-[0.1em] mb-8 text-foreground animate-reveal transition-all duration-1000"
+              className="text-xl font-bold uppercase mb-8 text-foreground animate-reveal transition-all duration-1000"
             >
               {t({ es: "Servicios", en: "Services" })}
             </h3>
