@@ -30,12 +30,7 @@ export function About() {
   }, [])
 
   const handleDownloadCV = () => {
-    const link = document.createElement("a")
-    link.href = "/Felipe-Manrique-CV.pdf"
-    link.download = "Felipe-Manrique-CV.pdf"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    window.open("/Felipe-Manrique-CV.pdf", "_blank")
   }
 
   return (
@@ -60,25 +55,25 @@ export function About() {
             >
               {t({ es: "Acerca de Mí", en: "About Me" })}
             </h3>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-balance leading-tight text-white">
-              {t({ es: "HAGAMOS COSAS INCREÍBLES JUNTOS.", en: "LET'S DO AWESOME THINGS TOGETHER." })}
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-balance leading-tight text-white">
+              {t({ es: "Diseño y tecnología al servicio de tus proyectos", en: "Design and technology at the service of your projects" })}
             </h2>
             <div className="space-y-4 mb-8">
               <p className="text-base leading-relaxed text-gray-300">
                 <span className="font-semibold text-white">
-                  {t({ es: "Arquitecto & Especialista en Diseño", en: "Architect & Design Specialist" })}
+                  {t({ es: "Arquitecto & Especialista en BIM", en: "Architect & BIM Specialist" })}
                 </span>
               </p>
               <p className="text-base leading-relaxed text-gray-300">
                 {t({
-                  es: "Soy Felipe Manrique, un arquitecto apasionado dedicado a crear diseños innovadores y sostenibles. Con años de experiencia en proyectos residenciales y comerciales, doy vida a las visiones a través de una planificación reflexiva y ejecución creativa.",
-                  en: "I'm Felipe Manrique, a passionate architect dedicated to creating innovative and sustainable designs. With years of experience in residential and commercial projects, I bring visions to life through thoughtful planning and creative execution.",
+                  es: "Soy Felipe Manrique, arquitecto con amplia experiencia internacional en proyectos residenciales y educativos, tanto en el sector privado como público, especializado en BIM. Combino creatividad y eficiencia digital para transformar ideas en soluciones constructivas y sostenibles.",
+                  en: "I'm Felipe Manrique, an architect with extensive international experience in residential and educational projects, in both private and public sectors, specialized in BIM. I combine creativity and digital efficiency to transform ideas into constructive and sustainable solutions.",
                 })}
               </p>
               <p className="text-base leading-relaxed text-gray-300">
                 {t({
-                  es: "Mi enfoque combina principios arquitectónicos modernos con estética de diseño atemporal. Creo en crear espacios que no solo se vean hermosos, sino que también mejoren la calidad de vida de quienes los habitan.",
-                  en: "My approach combines modern architectural principles with timeless design aesthetics. I believe in creating spaces that not only look beautiful but also enhance the quality of life for those who inhabit them.",
+                  es: "Mi enfoque integra principios arquitectónicos modernos con flujos de trabajo BIM avanzados, asegurando que cada proyecto no solo sea estéticamente bello, sino también coordinado, eficiente y optimizado para la construcción.",
+                  en: "My approach integrates modern architectural principles with advanced BIM workflows, ensuring that each project is not only aesthetically beautiful, but also coordinated, efficient, and optimized for construction.",
                 })}
               </p>
             </div>

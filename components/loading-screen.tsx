@@ -6,12 +6,25 @@ import { gsap } from "gsap"
 export function LoadingScreen() {
   const [progress, setProgress] = useState(0)
   const [isComplete, setIsComplete] = useState(false)
+  const [shouldShow, setShouldShow] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const fmaRef = useRef<HTMLDivElement>(null)
   const subtitleRef = useRef<HTMLParagraphElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const hasShown = sessionStorage.getItem("loadingScreenShown")
+    if (!hasShown) {
+      setShouldShow(true)
+      sessionStorage.setItem("loadingScreenShown", "true")
+    } else {
+      setIsComplete(true)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!shouldShow) return
+
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -80,10 +93,10 @@ export function LoadingScreen() {
       clearInterval(interval)
       ctx.revert()
     }
-  }, [])
+  }, [shouldShow])
 
   useEffect(() => {
-    if (progress === 100) {
+    if (progress === 100 && shouldShow) {
       const timer = setTimeout(() => {
         if (containerRef.current) {
           // Animate content fading out first
@@ -109,7 +122,7 @@ export function LoadingScreen() {
 
       return () => clearTimeout(timer)
     }
-  }, [progress])
+  }, [progress, shouldShow])
 
   if (isComplete) return null
 

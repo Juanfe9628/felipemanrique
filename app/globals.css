@@ -124,6 +124,8 @@
   }
   html {
     scroll-behavior: smooth;
+    /* Add scroll padding to account for fixed navigation bar */
+    scroll-padding-top: 5rem; /* 80px for navigation bar + some spacing */
   }
   /* Fixed cursor visibility - made it visible on desktop only */
   @media (min-width: 768px) {

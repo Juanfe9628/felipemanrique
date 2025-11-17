@@ -8,32 +8,32 @@ const services = [
     number: "01",
     title: { es: "Diseño Arquitectónico", en: "Architectural Design" },
     description: {
-      es: "Creación de diseños arquitectónicos innovadores y funcionales para espacios residenciales, comerciales y públicos.",
-      en: "Creating innovative and functional architectural designs for residential, commercial, and public spaces.",
+      es: "Diseños arquitectónicos que combinan creatividad, funcionalidad y practicidad. Desde conceptos iniciales hasta modelos detallados en Revit, creando espacios visualmente atractivos y completamente coordinados para la construcción.",
+      en: "Architectural designs that combine creativity, functionality, and practicality. From initial concepts to detailed Revit models, creating spaces that are visually compelling and fully coordinated for construction.",
     },
   },
   {
     number: "02",
-    title: { es: "Planificación de Proyectos", en: "Project Planning" },
+    title: { es: "Gestión de Obra", en: "Construction Management" },
     description: {
-      es: "Planificación y gestión integral de proyectos desde el concepto hasta la finalización, asegurando entrega oportuna.",
-      en: "Comprehensive project planning and management from concept to completion, ensuring timely delivery.",
+      es: "Los proyectos se desarrollan sin problemas, a tiempo y dentro del presupuesto. Coordinación con contratistas, seguimiento de cronogramas y mantenimiento de estándares de calidad en todas las fases de construcción.",
+      en: "Projects run smoothly, on time, and within budget. Coordinating with contractors, monitoring schedules, and maintaining quality standards throughout all phases of construction.",
     },
   },
   {
     number: "03",
-    title: { es: "Soluciones Sostenibles", en: "Sustainable Solutions" },
+    title: { es: "Consultoría BIM", en: "BIM Consultancy" },
     description: {
-      es: "Implementación de prácticas de diseño ecológicas y sostenibles que minimizan el impacto ambiental.",
-      en: "Implementing eco-friendly and sustainable design practices that minimize environmental impact.",
+      es: "Soluciones BIM personalizadas para optimizar flujos de trabajo y mejorar la colaboración del equipo. Coordinación de modelos, detección de interferencias, auditoría de proyectos e implementación de estándares BIM para una entrega de proyectos más eficiente.",
+      en: "Tailored BIM solutions to optimize workflows and improve team collaboration. Model coordination, clash detection, project auditing, and implementation of BIM standards for more efficient project delivery.",
     },
   },
   {
     number: "04",
-    title: { es: "Consultoría y Asesoría", en: "Consulting & Advisory" },
+    title: { es: "Consultoría de Proyectos Inmobiliarios", en: "Real Estate Project Consultancy" },
     description: {
-      es: "Servicios de consultoría experta para optimización de diseño, cumplimiento de códigos y viabilidad de proyectos.",
-      en: "Expert consulting services for design optimization, code compliance, and project feasibility.",
+      es: "Información basada en datos para proyectos inmobiliarios utilizando modelos BIM. Planificación de espacios, estimación de costos y análisis de rentabilidad de proyectos para apoyar la toma de decisiones informadas de desarrolladores e inversores.",
+      en: "Data-driven insights for real estate projects using BIM models. Space planning, cost estimation, and project profitability analysis to support informed decision-making for developers and investors.",
     },
   },
 ]
