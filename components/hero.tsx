@@ -28,24 +28,24 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20 pointer-events-none"></div>
 
       <div className="container mx-auto relative z-10" ref={heroRef}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1 space-y-8">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight leading-none animate-in fade-in slide-in-from-bottom-4 duration-700">
-              {t({ es: "HOLA! SOY", en: "HI! I'M" })}{" "}
-              <span className="text-accent block mt-3">{t({ es: "FELIPE", en: "FELIPE" })}</span>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+          <div className="order-2 lg:order-1 lg:col-span-3 space-y-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight animate-in fade-in slide-in-from-bottom-4 duration-700">
+              {t({ es: "¡Hola! Soy Felipe", en: "Hello! I'm Felipe" })}
             </h1>
-            <p className="text-2xl sm:text-3xl font-medium tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
-              {t({ es: "Arquitecto", en: "Architect" })}
+            <p className="text-2xl sm:text-3xl font-light tracking-wide leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
+              {t({ es: "Arquitecto & Especialista en BIM", en: "Architect & BIM Specialist" })}
             </p>
-            <p className="text-lg leading-relaxed text-muted-foreground max-w-xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+            <p className="text-lg sm:text-xl leading-relaxed text-muted-foreground max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
               {t({
-                es: "Creando diseños arquitectónicos innovadores que combinan funcionalidad con excelencia estética.",
-                en: "Creating innovative architectural designs that blend functionality with aesthetic excellence.",
+                es: "Diseño espacios contemporáneos y aplico flujos BIM avanzados para lograr proyectos innovadores que combinan funcionalidad con estética.",
+                en: "I design contemporary spaces and apply advanced BIM workflows to achieve innovative projects that combine functionality with aesthetics.",
               })}
             </p>
           </div>
+          {/* </CHANGE> */}
 
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div className="order-1 lg:order-2 lg:col-span-2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-sm aspect-[3/4] transition-all duration-700 hover:scale-[1.02] group">
               <div className="absolute inset-0 bg-accent/10 rounded-2xl transform group-hover:rotate-3 transition-transform duration-700"></div>
               <img

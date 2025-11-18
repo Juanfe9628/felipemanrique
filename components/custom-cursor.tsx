@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react"
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null)
   const [isHovering, setIsHovering] = useState(false)
+  const [isOverAbout, setIsOverAbout] = useState(false)
 
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
@@ -16,6 +17,10 @@ export function CustomCursor() {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement
+      
+      const aboutSection = target.closest('#about')
+      setIsOverAbout(!!aboutSection)
+      
       if (target.tagName === "A" || target.tagName === "BUTTON" || target.closest("a") || target.closest("button")) {
         setIsHovering(true)
       } else {
@@ -32,5 +37,5 @@ export function CustomCursor() {
     }
   }, [])
 
-  return <div ref={cursorRef} className={`custom-cursor ${isHovering ? "hover" : ""}`} />
+  return <div ref={cursorRef} className={`custom-cursor ${isHovering ? "hover" : ""} ${isOverAbout ? "over-about" : ""}`} />
 }

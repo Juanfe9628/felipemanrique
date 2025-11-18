@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Outfit } from "next/font/google"
+import { Outfit } from 'next/font/google'
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { LanguageProvider } from "@/lib/language-context"
@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: "Felipe Manrique - Arquitecto",
   description: "Felipe Manrique - Portafolio de arquitectura y sitio web de marca personal",
   generator: "v0.app",
+  icons: {
+    icon: "/favicon.svg",
+  },
 }
 
 export default function RootLayout({

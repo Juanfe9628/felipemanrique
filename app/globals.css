@@ -127,22 +127,16 @@
     /* Add scroll padding to account for fixed navigation bar */
     scroll-padding-top: 5rem; /* 80px for navigation bar + some spacing */
   }
-  /* Fixed cursor visibility - made it visible on desktop only */
+  /* Restore cursor: none to enable custom cursor */
   @media (min-width: 768px) {
     * {
-      cursor: none !important;
-    }
-    a,
-    button,
-    input,
-    textarea,
-    select {
       cursor: none !important;
     }
   }
 }
 
 /* Updated cursor with thinner border and grayscale color, fixed movement lag */
+/* Updated custom cursor to be optional and not interfere with normal cursor behavior */
 .custom-cursor {
   position: fixed;
   width: 12px;
@@ -169,6 +163,15 @@
   height: 40px;
   border-width: 1px;
   background: oklch(0.25 0 0 / 0.08);
+}
+
+.custom-cursor.over-about {
+  border-color: oklch(0.99 0 0);
+}
+
+.custom-cursor.over-about.hover {
+  border-color: oklch(0.99 0 0);
+  background: oklch(0.99 0 0 / 0.08);
 }
 
 .geometric-bg {
