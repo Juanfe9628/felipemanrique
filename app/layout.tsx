@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Outfit } from 'next/font/google'
-import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { LanguageProvider } from "@/lib/language-context"
 
@@ -29,7 +28,6 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${outfit.variable} font-sans antialiased`}>
         <LanguageProvider>{children}</LanguageProvider>
-        <Analytics />
       </body>
     </html>
   )

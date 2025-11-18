@@ -28,30 +28,29 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20 pointer-events-none"></div>
 
       <div className="container mx-auto relative z-10" ref={heroRef}>
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-          <div className="order-2 lg:order-1 lg:col-span-3 space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="order-2 lg:order-1 space-y-4">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight leading-tight animate-in fade-in slide-in-from-bottom-4 duration-700">
               {t({ es: "¡Hola! Soy Felipe", en: "Hello! I'm Felipe" })}
             </h1>
-            <p className="text-2xl sm:text-3xl font-light tracking-wide leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
+            <p className="text-3xl sm:text-4xl font-light tracking-wide leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
               {t({ es: "Arquitecto & Especialista en BIM", en: "Architect & BIM Specialist" })}
             </p>
-            <p className="text-lg sm:text-xl leading-relaxed text-muted-foreground max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+            <p className="text-xl sm:text-2xl leading-relaxed text-muted-foreground max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
               {t({
                 es: "Diseño espacios contemporáneos y aplico flujos BIM avanzados para lograr proyectos innovadores que combinan funcionalidad con estética.",
                 en: "I design contemporary spaces and apply advanced BIM workflows to achieve innovative projects that combine functionality with aesthetics.",
               })}
             </p>
           </div>
-          {/* </CHANGE> */}
 
-          <div className="order-1 lg:order-2 lg:col-span-2 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-sm aspect-[3/4] transition-all duration-700 hover:scale-[1.02] group">
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end lg:pr-8 py-8 lg:py-12">
+            <div className="relative w-full max-w-md h-auto transition-all duration-700 hover:scale-[1.02] group">
               <div className="absolute inset-0 bg-accent/10 rounded-2xl transform group-hover:rotate-3 transition-transform duration-700"></div>
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Felipe%20Manrique%20photo%20BN-CyChTPtg6oxtDMuykQUynV8NN5uArP.jpg"
                 alt="Felipe Manrique"
-                className="relative w-full h-full object-cover object-top rounded-2xl shadow-2xl"
+                className="relative w-full h-auto object-contain rounded-2xl shadow-2xl"
               />
             </div>
           </div>

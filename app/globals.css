@@ -236,6 +236,18 @@
   }
 }
 
+/* Added fadeUp animation for loading screen letters */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Fixed title animation to stay visible and only animate letter-spacing */
 @keyframes revealText {
   from {

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { X } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
 export function Navigation() {
@@ -103,7 +102,9 @@ export function Navigation() {
               className="absolute top-6 right-6 p-2 hover:bg-accent/10 rounded-full transition-colors"
               aria-label="Close menu"
             >
-              <X className="h-6 w-6" />
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
 
             <h2 className="text-sm font-light tracking-[0.3em] uppercase text-muted-foreground mb-12">

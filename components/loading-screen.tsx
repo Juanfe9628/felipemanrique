@@ -1,16 +1,13 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react"
-import { gsap } from "gsap"
 
 export function LoadingScreen() {
   const [progress, setProgress] = useState(0)
   const [isComplete, setIsComplete] = useState(false)
   const [shouldShow, setShouldShow] = useState(false)
+  const [fadeOut, setFadeOut] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
-  const fmaRef = useRef<HTMLDivElement>(null)
-  const subtitleRef = useRef<HTMLParagraphElement>(null)
-  const progressRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const hasShown = sessionStorage.getItem("loadingScreenShown")
@@ -35,89 +32,17 @@ export function LoadingScreen() {
       })
     }, 120)
 
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline()
-
-      if (fmaRef.current) {
-        const letters = fmaRef.current.querySelectorAll(".letter")
-        tl.fromTo(
-          letters,
-          {
-            opacity: 0,
-            y: 40,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1.5,
-            stagger: 0.15,
-            ease: "power3.out",
-          },
-        )
-      }
-
-      if (subtitleRef.current) {
-        tl.fromTo(
-          subtitleRef.current,
-          {
-            opacity: 0,
-            y: 15,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            ease: "power2.out",
-          },
-          "-=0.8",
-        )
-      }
-
-      if (progressRef.current) {
-        tl.fromTo(
-          progressRef.current,
-          {
-            opacity: 0,
-          },
-          {
-            opacity: 1,
-            duration: 1,
-            ease: "power2.out",
-          },
-          "-=0.8",
-        )
-      }
-    })
-
-    return () => {
-      clearInterval(interval)
-      ctx.revert()
-    }
+    return () => clearInterval(interval)
   }, [shouldShow])
 
   useEffect(() => {
     if (progress === 100 && shouldShow) {
       const timer = setTimeout(() => {
-        if (containerRef.current) {
-          // Animate content fading out first
-          gsap.to([fmaRef.current, subtitleRef.current, progressRef.current], {
-            opacity: 0,
-            y: -20,
-            duration: 0.5,
-            ease: "power2.in",
-            onComplete: () => {
-              // Then slide the entire container up like a curtain
-              gsap.to(containerRef.current, {
-                y: "-100%",
-                duration: 1.2,
-                ease: "power3.inOut",
-                onComplete: () => {
-                  setIsComplete(true)
-                },
-              })
-            },
-          })
-        }
+        setFadeOut(true)
+        
+        setTimeout(() => {
+          setIsComplete(true)
+        }, 1700) // Match total animation duration
       }, 500)
 
       return () => clearTimeout(timer)
@@ -127,22 +52,63 @@ export function LoadingScreen() {
   if (isComplete) return null
 
   return (
-    <div ref={containerRef} className="fixed inset-0 z-[9999] flex items-center justify-center bg-white">
-      <div className="relative text-center">
-        <div
-          ref={fmaRef}
-          className="text-[80px] md:text-[120px] lg:text-[140px] font-thin leading-none tracking-[0.15em] mb-4"
-        >
-          <span className="letter inline-block">F</span>
-          <span className="letter inline-block">M</span>
-          <span className="letter inline-block">A</span>
+    <div 
+      ref={containerRef} 
+      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-transform duration-1200 ease-in-out ${
+        fadeOut ? '-translate-y-full' : 'translate-y-0'
+      }`}
+      style={{ transitionTimingFunction: 'cubic-bezier(0.76, 0, 0.24, 1)' }}
+    >
+      <div className={`relative text-center transition-all duration-500 ${
+        fadeOut ? 'opacity-0 -translate-y-5' : 'opacity-100 translate-y-0'
+      }`}>
+        <div className="text-[80px] md:text-[120px] lg:text-[140px] font-thin leading-none tracking-[0.15em] mb-4">
+          <span 
+            className="inline-block animate-fade-up opacity-0"
+            style={{ 
+              animation: 'fadeUp 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+              animationDelay: '0ms'
+            }}
+          >
+            F
+          </span>
+          <span 
+            className="inline-block animate-fade-up opacity-0"
+            style={{ 
+              animation: 'fadeUp 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+              animationDelay: '150ms'
+            }}
+          >
+            M
+          </span>
+          <span 
+            className="inline-block animate-fade-up opacity-0"
+            style={{ 
+              animation: 'fadeUp 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+              animationDelay: '300ms'
+            }}
+          >
+            A
+          </span>
         </div>
 
-        <p ref={subtitleRef} className="text-xs md:text-sm font-normal tracking-[0.3em] text-gray-600 uppercase mb-12">
+        <p 
+          className="text-xs md:text-sm font-normal tracking-[0.3em] text-gray-600 uppercase mb-12 opacity-0"
+          style={{ 
+            animation: 'fadeUp 1.2s cubic-bezier(0.33, 1, 0.68, 1) forwards',
+            animationDelay: '700ms'
+          }}
+        >
           Felipe Manrique Arquitecto
         </p>
 
-        <div ref={progressRef} className="text-sm font-light text-gray-400 tabular-nums">
+        <div 
+          className="text-sm font-light text-gray-400 tabular-nums opacity-0"
+          style={{ 
+            animation: 'fadeIn 1s cubic-bezier(0.33, 1, 0.68, 1) forwards',
+            animationDelay: '700ms'
+          }}
+        >
           {Math.floor(progress)}%
         </div>
       </div>

@@ -1,6 +1,5 @@
 "use client"
 
-import { X } from 'lucide-react'
 import { useLanguage } from "@/lib/language-context"
 
 interface CVViewerProps {
@@ -29,16 +28,6 @@ export function CVViewer({ isOpen, onClose }: CVViewerProps) {
       license: {
         es: "Arquitecto Colegiado SCA - Emitido Septiembre 2022",
         en: "Licensed Architect SCA - Issued September 2022"
-      }
-    },
-    aboutMe: {
-      title: {
-        es: "Sobre mí",
-        en: "About Me"
-      },
-      content: {
-        es: "Como Arquitecto BIM dedicado, me especializo en metodologías BIM avanzadas, con experiencia en proyectos públicos enfocados en coordinación espacial y gestión BIM, y proyectos privados en todas las fases de diseño. Apasionado por integrar IA en los flujos de trabajo BIM, trabajo para mejorar la eficiencia, creatividad y sostenibilidad mientras contribuyo a una arquitectura innovadora y de alta calidad.",
-        en: "As a dedicated BIM Architect, I specialize in advanced BIM methodologies, with experience in public projects focused on spatial coordination and BIM management, and private projects across all design phases. Passionate about integrating AI into BIM workflows, I work to enhance efficiency, creativity, and sustainability while contributing to innovative, high-quality architecture."
       }
     },
     workExperience: {
@@ -264,7 +253,9 @@ export function CVViewer({ isOpen, onClose }: CVViewerProps) {
           className="sticky top-4 right-4 float-right z-10 p-2 bg-gray-900 text-white rounded-full hover:bg-gray-700 transition-colors"
           aria-label="Close CV"
         >
-          <X className="w-5 h-5" />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </button>
 
         <div className="p-8 md:p-12">
@@ -279,14 +270,6 @@ export function CVViewer({ isOpen, onClose }: CVViewerProps) {
               <p>{t(cvContent.header.license)}</p>
             </div>
           </div>
-
-          {/* About Me */}
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">{t(cvContent.aboutMe.title)}</h2>
-            <p className="text-gray-700 leading-relaxed">
-              {t(cvContent.aboutMe.content)}
-            </p>
-          </section>
 
           {/* Work Experience */}
           <section className="mb-8">
