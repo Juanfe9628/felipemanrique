@@ -13,7 +13,7 @@ const projects = [
       en: "The project consists in the creation of the new Milan Music Conservatory, inspired by the surrounding forest and its organic forms. The design reflects nature's influence on the arts, echoing music's origins as an emulation of natural sounds used in ceremonies. It aims to hypothetically revitalize an inaccessible area, transforming it into an open, inclusive space that catalyzes regeneration.",
     },
     contribution: {
-      es: "Coordinación BIM (proyecto completo), coordinación espacial, diseño técnico del Edificio B",
+      es: "Coordinación BIM (proyecto completo), proyecto básico, proyecto de ejecución del Edificio B",
       en: "BIM Coordination (entire project), spatial coordination, technical design of Building B",
     },
     phase: { es: "Fase de licitación", en: "Bidding phase" },
@@ -41,7 +41,7 @@ const projects = [
       en: "The project consists of the creation of the largest school complex in Italy, with nearly 15,000 m², on land reclaimed from the mafia, and covering approximately 69,894 m². It will have capacity for 1,800 students from kindergarten to Secondary levels. The design, inspired by a drop of water on earth, integrates the Garibaldi Institute, the Castel Volturno Centro Institute and a gym. The design features continuous and fluid spatial elements, reminiscent of the incessant flow of the Volturno River.",
     },
     contribution: {
-      es: "Coordinación BIM, coordinación espacial, diseño técnico y diseño paramétrico de fachada",
+      es: "Coordinación BIM, proyecto básico, proyecto de ejecución y diseño paramétrico de fachada",
       en: "BIM Coordination, spatial coordination, technical design and facade parametric design",
     },
     phase: { es: "Construcción en curso", en: "Ongoing construction" },
@@ -69,7 +69,7 @@ const projects = [
       en: "The ReStart Scampia project transforms the 69,000 m² former Lotto M into a sustainable eco-district with three residential buildings. Part of a broader urban regeneration plan, it replaces the deteriorated Vele di Scampia with modern, energy-efficient housing. The design integrates green spaces, pedestrian areas, and public areas, fostering social interaction. The project aims to be a symbol of rebirth for the neighborhood, turning an area historically marked by urban decay into a model of a smart, resilient, and inclusive city.",
     },
     contribution: {
-      es: "Coordinación BIM (proyecto completo), coordinación espacial, diseño técnico del Edificio A3",
+      es: "Coordinación BIM (proyecto completo), proyecto básico, proyecto de ejecución del Edificio A3",
       en: "BIM Coordination (entire project), spatial coordination, technical design of Building A3",
     },
     phase: { es: "Construcción en curso", en: "Ongoing construction" },
@@ -90,7 +90,7 @@ const projects = [
       en: 'The project envisions the new "Carlo Urbani" School Complex, "Luigi Einaudi" Campus, in Porto Sant\'Elpidio, replacing the existing facility with a modern educational hub for about 830 students. It brings together classrooms, laboratories, offices, libraries, and recreational spaces within three interconnected buildings. Designed as a civic landmark, the complex extends its role beyond education by integrating sports facilities, event areas, and public plazas open after school hours. The architecture harmonizes with the urban and natural context, enhancing the city\'s green corridor and connecting seamlessly with the surrounding streets.',
     },
     contribution: {
-      es: "Supervisión de obra, coordinación BIM, coordinación de contratistas, detalle de construcción y soporte en control de costos",
+      es: "Dirección de obra, coordinación BIM, coordinación de contratistas, detalle de construcción y soporte en control de costos",
       en: "Site supervision, BIM coordination, contractors' coordination, construction detailing, and support in cost control",
     },
     phase: { es: "Construcción en curso", en: "Ongoing construction" },
@@ -116,7 +116,7 @@ const projects = [
       en: "The apartment's renovation project aimed to create a unique ambient through experimentation with different shapes, materials and colors that, despite being very different from each other, together generate a balance and a particular contrast that make this a cozy space.",
     },
     contribution: {
-      es: "Diseño de concepto, coordinación espacial, diseño técnico (etapas RIBA), renderizado, dibujos de sistemas técnicos, estimación de costos, permisos de construcción y supervisión de construcción",
+      es: "Proyecto conceptual, proyecto básico, proyecto de ejecución, renderizado, dibujos de sistemas técnicos, estimación de costos, permisos de construcción y dirección de obra",
       en: "Concept design, spatial coordination, technical design (RIBA stages), rendering, technical systems drawings, costs estimation, building permits and construction supervision",
     },
     phase: { es: "Construido", en: "Built" },
@@ -142,7 +142,7 @@ const projects = [
       en: "Modern two-story villa, an architectural work that unifies contemporary design and functionality without compromises. Entering through the main entrance, a spacious living area is illuminated by large windows that embrace the beauty of the surrounding garden. The openings overlook a magnificent private garden, a true oasis of tranquility and beauty. Here, an outdoor lounge area with comfortable sofas invites moments of relaxation under the starry sky. Every element of this villa has been cared for in the smallest details. From atmospheric lights that accentuate the spaces to custom-made furniture crafted by expert artisans, every component contributes to creating a luxurious and sophisticated living experience.",
     },
     contribution: {
-      es: "Diseño de concepto, coordinación espacial, diseño técnico (etapas RIBA), renderizado, dibujos de sistemas técnicos, estimación de costos, permisos de construcción y supervisión de construcción",
+      es: "Proyecto conceptual, proyecto básico, proyecto de ejecución, renderizado, dibujos de sistemas técnicos, estimación de costos, permisos de construcción y dirección de obra",
       en: "Concept design, spatial coordination, technical design (RIBA stages), rendering, technical systems drawings, costs estimation, building permits and construction supervision",
     },
     phase: { es: "Construido", en: "Built" },
@@ -170,7 +170,7 @@ const projects = [
       en: "Restructuring project of a late eighties building on the shores of Lake Lugano. The architecture of the house develops in height integrating with the characteristics of the surrounding valley. Natural light enters the rooms arranged on different levels, creating a new form of dialogue with the lake and the mountain. Throughout the project, it was decided to maintain a minimalist but intense line. The living area is characterized by custom-made furniture, the result of careful study and in tune with the client's tastes. The harmony of the decorative choices brings light and breath to the environment, without diverting attention from the external view.",
     },
     contribution: {
-      es: "Diseño de concepto, coordinación espacial, diseño técnico (etapas RIBA), renderizado, dibujos de sistemas técnicos y estimación de costos",
+      es: "Proyecto conceptual, proyecto básico, proyecto de ejecución, renderizado, dibujos de sistemas técnicos y estimación de costos",
       en: "Concept design, spatial coordination, technical design (RIBA stages), rendering, technical systems drawings and costs estimation",
     },
     phase: { es: "Construido", en: "Built" },
@@ -197,7 +197,7 @@ const projects = [
       en: "The apartment's renovation project aimed to create a unique ambient through experimentation with different shapes, materials and colors that, despite being very different from each other, together generate a balance and a particular contrast that make this a cozy space.",
     },
     contribution: {
-      es: "Diseño de concepto, coordinación espacial, diseño técnico (etapas RIBA), renderizado, dibujos de sistemas técnicos y estimación de costos",
+      es: "Proyecto conceptual, proyecto básico, proyecto de ejecución, renderizado, dibujos de sistemas técnicos y estimación de costos",
       en: "Concept design, spatial coordination, technical design (RIBA stages), rendering, technical systems drawings and costs estimation",
     },
     phase: { es: "Construido", en: "Built" },

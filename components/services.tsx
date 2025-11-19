@@ -14,7 +14,7 @@ const services = [
   },
   {
     number: "02",
-    title: { es: "Gestión de Obra", en: "Construction Management" },
+    title: { es: "Dirección de Obra", en: "Construction Management" },
     description: {
       es: "Los proyectos se desarrollan sin problemas, a tiempo y dentro del presupuesto. Coordinación con contratistas, seguimiento de cronogramas y mantenimiento de estándares de calidad en todas las fases de construcción.",
       en: "Projects run smoothly, on time, and within budget. Coordinating with contractors, monitoring schedules, and maintaining quality standards throughout all phases of construction.",

@@ -2,6 +2,50 @@
 
 import { useEffect, useState, useRef } from "react"
 
+const portfolioImages = [
+  "/images/bdm-01.webp",
+  "/images/bdm-02.webp",
+  "/images/bdm-03.webp",
+  "/images/bdm-04.webp",
+  "/images/bdm-05.webp",
+  "/images/bdm-06.webp",
+  "/images/csl-01.webp",
+  "/images/csl-02.webp",
+  "/images/csl-03.webp",
+  "/images/csl-04.webp",
+  "/images/csl-05.webp",
+  "/images/csl-06.webp",
+  "/images/scampia-01.webp",
+  "/images/scampia-02.webp",
+  "/images/scampia-03.webp",
+  "/images/scampia-04.webp",
+  "/images/carlo-urbani-01.webp",
+  "/images/carlo-urbani-02.webp",
+  "/images/carlo-urbani-03.webp",
+  "/images/carlo-urbani-04.webp",
+  "/images/sweet-contrast-01.webp",
+  "/images/sweet-contrast-02.webp",
+  "/images/sweet-contrast-03.webp",
+  "/images/sweet-contrast-04.webp",
+  "/images/villa-m-01.webp",
+  "/images/villa-m-02.webp",
+  "/images/villa-m-03.webp",
+  "/images/villa-m-04.webp",
+  "/images/villa-m-05.webp",
+  "/images/villa-m-06.webp",
+  "/images/lake-view-01.webp",
+  "/images/lake-view-02.webp",
+  "/images/lake-view-03.webp",
+  "/images/lake-view-04.webp",
+  "/images/lake-view-05.webp",
+  "/images/classic-boundary-01.webp",
+  "/images/classic-boundary-02.webp",
+  "/images/classic-boundary-03.webp",
+  "/images/classic-boundary-04.webp",
+  "/images/classic-boundary-05.webp",
+  "/images/classic-boundary-06.webp",
+]
+
 export function LoadingScreen() {
   const [progress, setProgress] = useState(0)
   const [isComplete, setIsComplete] = useState(false)
@@ -21,6 +65,13 @@ export function LoadingScreen() {
 
   useEffect(() => {
     if (!shouldShow) return
+
+    // Start preloading images immediately
+    portfolioImages.forEach((src) => {
+      const img = new Image()
+      img.src = src
+      // Images load in background, no need to wait
+    })
 
     const interval = setInterval(() => {
       setProgress((prev) => {

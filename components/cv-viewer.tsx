@@ -38,17 +38,17 @@ export function CVViewer({ isOpen, onClose }: CVViewerProps) {
       positions: [
         {
           title: {
-            es: "Arquitecto BIM de Construcción",
+            es: "Arquitecto BIM en Dirección de Obra",
             en: "BIM Construction Architect"
           },
           company: "Settanta 7",
           location: {
-            es: "Turín, Italia | Proyectos en Milán y Porto Sant'Elpidio",
-            en: "Turin, Italy | Projects in Milan and Porto Sant'Elpidio"
+            es: "Turín, Italia | Proyectos en Milán y Porto Sant'Elpidio | 1 año",
+            en: "Turin, Italy | Projects in Milan and Porto Sant'Elpidio | 1 year"
           },
           period: "2024-2025",
           description: {
-            es: "Lideré la integración y coordinación BIM para proyectos de construcción pública, asegurando una colaboración fluida entre diseño y ejecución. Gestioné detalles técnicos, documentación y BIM en obra, apoyando la supervisión de construcción y supervisando la calidad de ejecución.",
+            es: "Dirigí la integración y coordinación BIM para proyectos de construcción pública, asegurando una colaboración fluida entre diseño y ejecución. Gestioné detalles técnicos, documentación y BIM en obra, apoyando la dirección de obra y supervisando la calidad de ejecución.",
             en: "Led BIM integration and coordination for public construction projects, ensuring seamless collaboration between design and execution. Managed technical detailing, documentation, and on-site BIM while supporting construction supervision, overseeing execution quality."
           }
         },
@@ -70,7 +70,7 @@ export function CVViewer({ isOpen, onClose }: CVViewerProps) {
         },
         {
           title: {
-            es: "Gerente de Proyecto",
+            es: "Project Manager",
             en: "Project Manager"
           },
           company: "Officina 8A",
