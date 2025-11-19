@@ -140,7 +140,8 @@ export function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-12 rounded-full transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                  variant="outline"
+                  className="w-full border-2 border-foreground hover:bg-foreground hover:text-background font-semibold h-12 rounded-full transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting
                     ? t({ es: "ENVIANDO...", en: "SENDING..." })

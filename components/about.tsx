@@ -9,6 +9,7 @@ export function About() {
   const { t } = useLanguage()
   const titleRef = useRef<HTMLHeadingElement>(null)
   const [showCV, setShowCV] = useState(false)
+  const [isLogoActive, setIsLogoActive] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,16 +36,30 @@ export function About() {
     setShowCV(true)
   }
 
+  const handleLogoClick = () => {
+    setIsLogoActive(true)
+    setTimeout(() => setIsLogoActive(false), 500)
+  }
+
   return (
     <>
       <section id="about" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#1a1d20" }}>
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="flex items-center justify-center lg:justify-start">
-              <div className="relative flex items-center justify-center w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/20 transition-all duration-500 ease-out hover:scale-110 hover:rotate-6 cursor-pointer group">
+              <div 
+                onClick={handleLogoClick}
+                className={`relative flex items-center justify-center w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/20 transition-all duration-500 ease-out hover:scale-110 hover:rotate-6 cursor-pointer group ${
+                  isLogoActive ? 'scale-110 rotate-6' : ''
+                }`}
+              >
                 <div className="text-center">
-                  <div className="text-7xl md:text-8xl font-thin text-white tracking-[0.15em] transition-all duration-500 group-hover:tracking-[0.2em]">FMA</div>
-                  <div className="text-sm md:text-base font-normal tracking-[0.3em] text-gray-400 uppercase mt-4 transition-colors duration-500 group-hover:text-gray-300">
+                  <div className={`text-7xl md:text-8xl font-thin text-white tracking-[0.15em] transition-all duration-500 group-hover:tracking-[0.2em] ${
+                    isLogoActive ? 'tracking-[0.2em]' : ''
+                  }`}>FMA</div>
+                  <div className={`text-sm md:text-base font-normal tracking-[0.3em] text-gray-400 uppercase mt-4 transition-colors duration-500 group-hover:text-gray-300 ${
+                    isLogoActive ? 'text-gray-300' : ''
+                  }`}>
                     Felipe Manrique Arquitecto
                   </div>
                 </div>

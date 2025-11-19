@@ -133,7 +133,7 @@ export function CVViewer({ isOpen, onClose }: CVViewerProps) {
             es: "Politecnico di Torino - Turín, Italia",
             en: "Politecnico di Torino - Turin, Italy"
           },
-          period: "2022-2024",
+          period: "2017-2019",
           score: {
             es: "Calificación Final: 110/110 Cum Laude con mención",
             en: "Final Score: 110/110 Cum Laude and mention"
@@ -210,8 +210,8 @@ export function CVViewer({ isOpen, onClose }: CVViewerProps) {
         en: "Soft Skills"
       },
       skills: {
-        es: ["Liderazgo", "Resolución de problemas", "Trabajo en equipo", "Innovación", "BIM", "Inteligencia Artificial", "Construcción", "Diseño"],
-        en: ["Leadership", "Problem solving", "Teamwork", "Innovation", "BIM", "Artificial Intelligence", "Construction", "Design"]
+        es: ["Liderazgo", "Resolución de problemas", "Trabajo en equipo", "Innovación"],
+        en: ["Leadership", "Problem solving", "Teamwork", "Innovation"]
       }
     },
     languages: {

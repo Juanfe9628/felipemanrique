@@ -66,7 +66,11 @@ export function Services() {
   }, [])
 
   const handleServiceClick = (index: number) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index))
+    if (activeIndex === index) {
+      setActiveIndex(null)
+    } else {
+      setActiveIndex(index)
+    }
   }
 
   return (

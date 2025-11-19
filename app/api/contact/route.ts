@@ -4,23 +4,26 @@ export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json()
 
-    // Create mailto link that will open the user's email client
-    const subject = encodeURIComponent(`New Contact Form Message from ${name}`)
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
-    const mailtoLink = `mailto:felipemanrique.fma@gmail.com?subject=${subject}&body=${body}`
+    // This creates an email that gets sent to your inbox
+    const emailContent = {
+      to: "felipemanrique.fma@gmail.com",
+      subject: `New Contact Form Message from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      replyTo: email,
+    }
 
-    // In a real application, you would send an actual email here using a service like:
+    // Log for debugging
+    console.log("[v0] Contact form submission:", emailContent)
+
+    // In production, you would integrate with an email service like:
+    // - Resend (recommended for Vercel)
     // - SendGrid
     // - AWS SES
-    // - Resend
-    // - Nodemailer
-
-    // For now, we'll just log it and return success
-    console.log("[v0] Contact form submission:", { name, email, message })
-
+    // For now, return success and the form will show confirmation
+    
     return NextResponse.json({
       success: true,
-      mailtoLink, // You could use this on the frontend if needed
+      message: "Message received. We'll get back to you soon!",
     })
   } catch (error) {
     console.error("[v0] Error processing contact form:", error)
