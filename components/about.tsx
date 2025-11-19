@@ -41,10 +41,10 @@ export function About() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="flex items-center justify-center lg:justify-start">
-              <div className="relative flex items-center justify-center w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/20">
+              <div className="relative flex items-center justify-center w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/20 transition-all duration-500 ease-out hover:scale-110 hover:rotate-6 cursor-pointer group">
                 <div className="text-center">
-                  <div className="text-7xl md:text-8xl font-thin text-white tracking-[0.15em]">FMA</div>
-                  <div className="text-sm md:text-base font-normal tracking-[0.3em] text-gray-400 uppercase mt-4">
+                  <div className="text-7xl md:text-8xl font-thin text-white tracking-[0.15em] transition-all duration-500 group-hover:tracking-[0.2em]">FMA</div>
+                  <div className="text-sm md:text-base font-normal tracking-[0.3em] text-gray-400 uppercase mt-4 transition-colors duration-500 group-hover:text-gray-300">
                     Felipe Manrique Arquitecto
                   </div>
                 </div>

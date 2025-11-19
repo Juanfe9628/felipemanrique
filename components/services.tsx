@@ -42,6 +42,7 @@ export function Services() {
   const { t } = useLanguage()
   const titleRef = useRef<HTMLHeadingElement>(null)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -64,6 +65,10 @@ export function Services() {
     return () => observer.disconnect()
   }, [])
 
+  const handleServiceClick = (index: number) => {
+    setActiveIndex((prevIndex) => (prevIndex === index ? null : index))
+  }
+
   return (
     <section id="services" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="container mx-auto">
@@ -81,10 +86,11 @@ export function Services() {
               <div
                 key={index}
                 className={`relative overflow-hidden transition-all duration-700 ease-in-out cursor-pointer border-r border-border/30 last:border-r-0 flex flex-col ${
-                  hoveredIndex === index ? "bg-secondary/50 md:flex-[2]" : "bg-background md:flex-1"
+                  hoveredIndex === index || activeIndex === index ? "bg-secondary/50 md:flex-[2]" : "bg-background md:flex-1"
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => handleServiceClick(index)}
                 style={{ minHeight: "250px" }}
               >
                 <div className="p-6 h-full flex flex-col justify-between">
@@ -102,7 +108,7 @@ export function Services() {
                   </div>
                   <div
                     className={`transition-all duration-700 overflow-hidden ${
-                      hoveredIndex === index ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+                      hoveredIndex === index || activeIndex === index ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
                     }`}
                   >
                     <p className="text-muted-foreground leading-relaxed text-sm">{t(service.description)}</p>
