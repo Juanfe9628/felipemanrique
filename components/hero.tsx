@@ -30,7 +30,7 @@ export function Hero() {
           </div>
 
           <div className="order-1 lg:order-2 flex items-start justify-center lg:justify-end lg:pr-8 py-4 lg:py-6">
-            <div className="relative w-full max-w-md h-auto transition-all duration-700 hover:scale-[1.02] group">
+            <div className="relative w-full max-w-[26.6rem] h-auto transition-all duration-700 hover:scale-[1.02] group">
               <div className="absolute inset-0 bg-accent/10 rounded-2xl transform group-hover:rotate-3 transition-transform duration-700"></div>
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Felipe%20Manrique%20photo%20BN-CyChTPtg6oxtDMuykQUynV8NN5uArP.jpg"

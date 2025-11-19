@@ -12,7 +12,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Felipe Manrique - Arquitecto",
-  description: "Felipe Manrique - Portafolio de arquitectura y sitio web de marca personal",
+  description: "Arquitecto & Especialista en BIM. Diseño espacios contemporáneos y aplico flujos BIM avanzados para lograr proyectos innovadores que combinan funcionalidad con estética.",
   generator: "v0.app",
   icons: {
     icon: "/favicon.svg",
