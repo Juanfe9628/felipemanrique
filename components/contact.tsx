@@ -45,12 +45,18 @@ export function Contact() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: "04e29382-2d3b-4262-9c27-1843f58b95db",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          to: "felipemanrique.fma@gmail.com",
+        }),
       })
 
       if (response.ok) {
