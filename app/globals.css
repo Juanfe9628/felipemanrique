@@ -127,8 +127,8 @@
     /* Add scroll padding to account for fixed navigation bar */
     scroll-padding-top: 5rem; /* 80px for navigation bar + some spacing */
   }
-  /* Restore cursor: none to enable custom cursor */
-  @media (min-width: 768px) {
+  /* Hide cursor only on large desktop screens (1280px+), excluding iPads */
+  @media (min-width: 1280px) {
     * {
       cursor: none !important;
     }
@@ -152,7 +152,8 @@
   will-change: left, top;
 }
 
-@media (min-width: 768px) {
+/* Only show custom cursor on large desktop screens, not on iPad */
+@media (min-width: 1280px) {
   .custom-cursor {
     display: block;
   }

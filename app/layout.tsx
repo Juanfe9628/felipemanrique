@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Outfit } from 'next/font/google'
+import { Outfit } from "next/font/google"
 import "./globals.css"
 import { LanguageProvider } from "@/lib/language-context"
 
@@ -11,11 +11,20 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  title: "Felipe Manrique - Arquitecto",
-  description: "Arquitecto & Especialista en BIM. Diseño espacios contemporáneos y aplico flujos BIM avanzados para lograr proyectos innovadores que combinan funcionalidad con estética.",
+  title: "Felipe Manrique - Arquitecto BIM",
+  description:
+    "Arquitecto & Especialista en BIM. Diseño espacios contemporáneos aplicando flujos BIM avanzados para proyectos innovadores.",
   generator: "v0.app",
   icons: {
-    icon: "/favicon.svg",
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
+  openGraph: {
+    title: "Felipe Manrique - Arquitecto BIM",
+    description:
+      "Arquitecto & Especialista en BIM. Diseño espacios contemporáneos aplicando flujos BIM avanzados para proyectos innovadores.",
+    type: "website",
+    locale: "es_ES",
+    siteName: "Felipe Manrique",
   },
 }
 
