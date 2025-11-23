@@ -98,8 +98,8 @@ export function Services() {
                 onClick={() => handleServiceClick(index)}
                 style={{ minHeight: "250px" }}
               >
-                <div className="p-6 h-full flex flex-col justify-between">
-                  <div>
+                <div className="p-6 h-full flex flex-col">
+                  <div className="flex-1 flex flex-col">
                     <div className="text-4xl font-bold text-gray-300 mb-4 transition-all duration-700">
                       {service.number}
                     </div>
@@ -110,16 +110,21 @@ export function Services() {
                     >
                       {t(service.title)}
                     </h3>
+                    <div
+                      className={`transition-all duration-700 overflow-hidden ${
+                        hoveredIndex === index || activeIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <p className="text-muted-foreground leading-relaxed text-sm">{t(service.description)}</p>
+                    </div>
                   </div>
-                  <div
-                    className={`transition-all duration-700 overflow-hidden ${
-                      hoveredIndex === index || activeIndex === index
-                        ? "max-h-96 opacity-100 mt-4"
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p className="text-muted-foreground leading-relaxed text-sm">{t(service.description)}</p>
-                  </div>
+                  {isTouchDevice && (
+                    <div className="mt-4 pt-4 border-t border-border/20 text-center">
+                      <span className="text-xs uppercase tracking-widest text-muted-foreground/70 font-medium">
+                        {activeIndex === index ? t({ es: "Cerrar", en: "Close" }) : t({ es: "Abrir", en: "Open" })}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
