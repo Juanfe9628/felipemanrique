@@ -17,11 +17,12 @@ export const metadata: Metadata = {
   generator: "v0.app",
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.jpg", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.jpg", type: "image/svg+xml" },
+      { url: "/favicon.jpg", type: "image/png", sizes: "48x48" },
+      { url: "/favicon.jpg", type: "image/png", sizes: "192x192" },
     ],
     apple: [{ url: "/apple-touch-icon.jpg", sizes: "180x180", type: "image/png" }],
-    shortcut: "/favicon.svg",
+    shortcut: "/favicon.jpg",
   },
   openGraph: {
     title: "Felipe Manrique - Arquitecto BIM",
@@ -30,9 +31,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     siteName: "Felipe Manrique",
+    url: "https://www.felipemanrique.com",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://www.felipemanrique.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Felipe Manrique - Arquitecto BIM",
@@ -44,7 +46,10 @@ export const metadata: Metadata = {
     title: "Felipe Manrique - Arquitecto BIM",
     description:
       "Arquitecto & Especialista en BIM. Diseño espacios contemporáneos aplicando flujos BIM avanzados para proyectos innovadores.",
-    images: ["/og-image.jpg"],
+    images: ["https://www.felipemanrique.com/og-image.jpg"],
+  },
+  verification: {
+    google: "google-site-verification",
   },
 }
 
