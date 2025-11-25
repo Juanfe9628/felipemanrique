@@ -80,7 +80,7 @@ export function CVViewer({ isOpen, onClose }: CVViewerProps) {
           },
           period: "2021-2022",
           description: {
-            es: "Gestioné proyectos de renovación privada y nuevos desarrollos desde el concepto hasta la entrega final, incluyendo compromiso con el cliente, desarrollo de diseño, permisos de construcción y coordinación de equipo. Supervisé todas las fases, asegurando alineación con los objetivos del cliente, estándares regulatorios y supervisión exitosa en obra.",
+            es: "Gestioné proyectos de renovación privada y nuevos desarrollos desde el concepto hasta la entrega final, incluyendo relación con el cliente, desarrollo de diseño, permisos de construcción y coordinación de equipo. Supervisé todas las fases, asegurando alineación con los objetivos del cliente, estándares regulatorios y supervisión exitosa en obra.",
             en: "Managed private renovation and greenfield projects from concept to final delivery, including client engagement, design development, building permits, and team coordination. Oversaw all phases, ensuring alignment with client goals, regulatory standards, and successful on-site supervision.",
           },
         },
