@@ -15,13 +15,13 @@ export function Hero() {
       <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="order-2 lg:order-1 space-y-4">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl font-semibold tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl 2xl:text-8xl font-semibold tracking-tight leading-tight">
               {t({ es: "¡Hola! Soy Felipe", en: "Hello! I'm Felipe" })}
             </h1>
-            <p className="text-3xl sm:text-4xl 2xl:text-5xl font-light tracking-wide leading-relaxed">
+            <p className="text-2xl sm:text-3xl md:text-3xl lg:text-3xl 2xl:text-5xl font-light tracking-wide leading-relaxed">
               {t({ es: "Arquitecto & Especialista en BIM", en: "Architect & BIM Specialist" })}
             </p>
-            <p className="text-xl sm:text-2xl 2xl:text-3xl leading-relaxed text-muted-foreground max-w-2xl">
+            <p className="text-lg sm:text-xl md:text-xl lg:text-xl 2xl:text-3xl leading-relaxed text-muted-foreground max-w-2xl">
               {t({
                 es: "Diseño espacios contemporáneos y aplico flujos BIM avanzados para lograr proyectos innovadores que combinan funcionalidad con estética.",
                 en: "I design contemporary spaces and apply advanced BIM workflows to achieve innovative projects that combine functionality with aesthetics.",

@@ -17,14 +17,8 @@ export const metadata: Metadata = {
   generator: "v0.app",
   metadataBase: new URL("https://www.felipemanrique.com"),
   icons: {
-    icon: [
-      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
-      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
-      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
-      { url: "/favicon-192x192.png", type: "image/png", sizes: "192x192" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    shortcut: "/favicon-48x48.png",
+    icon: "/favicon.svg",
+    apple: "/apple-touch-icon.jpg",
   },
   openGraph: {
     title: "Felipe Manrique - Arquitecto BIM",
