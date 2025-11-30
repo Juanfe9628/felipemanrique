@@ -121,7 +121,7 @@ export function Services() {
                     <p className="text-muted-foreground leading-relaxed text-sm">{t(service.description)}</p>
                   </div>
                   {isTouchDevice && (
-                    <div className="mt-4 text-xs uppercase tracking-wider text-muted-foreground/60 transition-all duration-300">
+                    <div className="lg:hidden mt-4 text-xs uppercase tracking-wider text-muted-foreground/60 transition-all duration-300 border-t border-border/30 pt-3 text-center">
                       {activeIndex === index ? t({ es: "Cerrar", en: "Close" }) : t({ es: "Abrir", en: "Open" })}
                     </div>
                   )}

@@ -128,7 +128,8 @@
     scroll-padding-top: 5rem; /* 80px for navigation bar + some spacing */
   }
   /* Hide cursor only on large desktop screens (1280px+), excluding iPads */
-  @media (min-width: 1280px) {
+  /* Changed breakpoint to 1024px to exclude iPads */
+  @media (min-width: 1024px) and (pointer: fine) {
     * {
       cursor: none !important;
     }
@@ -153,7 +154,8 @@
 }
 
 /* Only show custom cursor on large desktop screens, not on iPad */
-@media (min-width: 1280px) {
+/* Changed breakpoint to 1024px and added pointer: fine to exclude iPads */
+@media (min-width: 1024px) and (pointer: fine) {
   .custom-cursor {
     display: block;
   }
