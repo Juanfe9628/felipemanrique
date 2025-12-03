@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Outfit } from "next/font/google"
 import "./globals.css"
 import { LanguageProvider } from "@/lib/language-context"
+import Script from "next/script"
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -48,6 +49,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-6K0E3NMSMS" strategy="afterInteractive" />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-6K0E3NMSMS');
+        `}
+      </Script>
       <body className={`${outfit.variable} font-sans antialiased`}>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
