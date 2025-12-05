@@ -15,13 +15,13 @@ export function Hero() {
       <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="order-2 lg:order-1 space-y-4">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl [&]:[@media(min-width:1601px)]:text-8xl font-semibold tracking-tight leading-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl [&]:[@media(min-width:1601px)]:text-[6.5rem] font-semibold tracking-tight leading-tight">
               {t({ es: "¡Hola! Soy Felipe", en: "Hello! I'm Felipe" })}
             </h1>
-            <p className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl [&]:[@media(min-width:1601px)]:text-5xl font-light tracking-wide leading-relaxed">
+            <p className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl [&]:[@media(min-width:1601px)]:text-[2.75rem] font-light tracking-wide leading-relaxed">
               {t({ es: "Arquitecto & Especialista en BIM", en: "Architect & BIM Specialist" })}
             </p>
-            <p className="text-xl sm:text-2xl md:text-2xl lg:text-2xl [&]:[@media(min-width:1601px)]:text-3xl leading-relaxed text-muted-foreground max-w-2xl">
+            <p className="text-xl sm:text-2xl md:text-2xl lg:text-2xl [&]:[@media(min-width:1601px)]:text-[1.65rem] leading-relaxed text-muted-foreground max-w-2xl">
               {t({
                 es: "Diseño espacios contemporáneos y aplico flujos BIM avanzados para lograr proyectos innovadores que combinan funcionalidad con estética.",
                 en: "I design contemporary spaces and apply advanced BIM workflows to achieve innovative projects that combine functionality with aesthetics.",
@@ -30,7 +30,7 @@ export function Hero() {
           </div>
 
           <div className="order-1 lg:order-2 flex items-start justify-center lg:justify-end lg:pr-8 py-4 lg:py-6">
-            <div className="relative w-full max-w-[26.6rem] lg:max-w-md [@media(min-width:1601px)]:max-w-2xl h-auto transition-all duration-700 hover:scale-[1.02] group">
+            <div className="relative w-full max-w-[26.6rem] lg:max-w-md [@media(min-width:1601px)]:max-w-xl h-auto transition-all duration-700 hover:scale-[1.02] group">
               <div className="absolute inset-0 bg-accent/10 rounded-2xl transform group-hover:rotate-3 transition-transform duration-700"></div>
               <img
                 src="/images/felipe-20manrique-20photo-20bn.jpg"

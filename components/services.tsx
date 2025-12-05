@@ -93,9 +93,9 @@ export function Services() {
                     ? "bg-secondary/50 md:flex-[2]"
                     : "bg-background md:flex-1"
                 }`}
-                onMouseEnter={() => !isTouchDevice && setHoveredIndex(index)}
-                onMouseLeave={() => !isTouchDevice && setHoveredIndex(null)}
-                onClick={() => handleServiceClick(index)}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => isTouchDevice && handleServiceClick(index)}
                 style={{ minHeight: "250px" }}
               >
                 <div className="p-6 h-full flex flex-col justify-between">
