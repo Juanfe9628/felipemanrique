@@ -84,11 +84,11 @@ export function Services() {
               {t({ es: "Servicios", en: "Services" })}
             </h3>
           </div>
-          <div className="flex flex-col md:flex-row border-t border-border/30">
+          <div className="flex flex-col md:flex-row border-t border-border/30 md:h-[350px]">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`relative overflow-hidden transition-all duration-700 ease-in-out cursor-pointer border-r border-border/30 last:border-r-0 flex flex-col ${
+                className={`relative overflow-hidden transition-all duration-700 ease-in-out cursor-pointer border-r border-border/30 last:border-r-0 ${
                   hoveredIndex === index || activeIndex === index
                     ? "bg-secondary/50 md:flex-[2]"
                     : "bg-background md:flex-1"
@@ -96,9 +96,8 @@ export function Services() {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => isTouchDevice && handleServiceClick(index)}
-                style={{ minHeight: "250px" }}
               >
-                <div className="p-6 h-full flex flex-col justify-between">
+                <div className="p-6 h-full relative">
                   <div>
                     <div className="text-4xl font-bold text-gray-300 mb-4 transition-all duration-700">
                       {service.number}
@@ -112,16 +111,14 @@ export function Services() {
                     </h3>
                   </div>
                   <div
-                    className={`transition-all duration-700 overflow-hidden ${
-                      hoveredIndex === index || activeIndex === index
-                        ? "max-h-96 opacity-100 mt-4"
-                        : "max-h-0 opacity-0"
+                    className={`absolute left-6 right-6 transition-opacity duration-700 ${
+                      hoveredIndex === index || activeIndex === index ? "opacity-100" : "opacity-0 pointer-events-none"
                     }`}
                   >
                     <p className="text-muted-foreground leading-relaxed text-sm">{t(service.description)}</p>
                   </div>
                   {isTouchDevice && (
-                    <div className="lg:hidden mt-4 text-xs uppercase tracking-wider text-muted-foreground/60 transition-all duration-300 border-t border-border/30 pt-3 text-center">
+                    <div className="lg:hidden absolute bottom-6 left-6 right-6 text-xs uppercase tracking-wider text-muted-foreground/60 transition-all duration-300 border-t border-border/30 pt-3 text-center">
                       {activeIndex === index ? t({ es: "Cerrar", en: "Close" }) : t({ es: "Abrir", en: "Open" })}
                     </div>
                   )}
