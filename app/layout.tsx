@@ -49,6 +49,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <Script type="application/ld+json" id="organization-schema" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Felipe Manrique",
+            url: "https://www.felipemanrique.com",
+            image: "https://www.felipemanrique.com/favicon-48x48.jpg",
+            jobTitle: "BIM Architect",
+            description:
+              "Arquitecto & Especialista en BIM. Diseño espacios contemporáneos aplicando flujos BIM avanzados para proyectos innovadores.",
+            sameAs: [],
+          })}
+        </Script>
+        <Script type="application/ld+json" id="website-schema" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Felipe Manrique - Arquitecto BIM",
+            url: "https://www.felipemanrique.com",
+            publisher: {
+              "@type": "Person",
+              name: "Felipe Manrique",
+              image: "https://www.felipemanrique.com/favicon-48x48.jpg",
+            },
+          })}
+        </Script>
+      </head>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-6K0E3NMSMS" strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
