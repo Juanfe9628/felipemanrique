@@ -73,8 +73,8 @@ export function Contact() {
 
   const contactInfo = [
     { text: "felipemanrique.fma@gmail.com", label: { es: "Email", en: "Email" } },
-    { text: "+39 3665420617", label: { es: "Teléfono", en: "Phone" } },
-    { text: { es: "Turín, Italia", en: "Turin, Italy" }, label: { es: "Ubicación", en: "Location" } },
+    { text: "+57 310 6336855", label: { es: "Teléfono", en: "Phone" } },
+    { text: { es: "Cali, Colombia", en: "Cali, Colombia" }, label: { es: "Ubicación", en: "Location" } },
   ]
 
   return (

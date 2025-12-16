@@ -8,7 +8,7 @@ const services = [
     number: "01",
     title: { es: "Diseño Arquitectónico", en: "Architectural Design" },
     description: {
-      es: "Diseños arquitectónicos que combinan creatividad, funcionalidad y practicidad. Desde conceptos iniciales hasta modelos detallados en Revit, creando espacios visualmente atractivos y completamente coordinados para la construcción.",
+      es: "Diseños arquitectónicos desarrollados mediante la metodología BIM, combinando creatividad, funcionalidad y practicidad. Desde conceptos iniciales hasta modelos arquitectónicos coordinados, permitiendo una visualización precisa del proyecto y la creación de espacios visualmente atractivos y listos para su construcción.",
       en: "Architectural designs that combine creativity, functionality, and practicality. From initial concepts to detailed Revit models, creating spaces that are visually compelling and fully coordinated for construction.",
     },
   },
@@ -16,7 +16,7 @@ const services = [
     number: "02",
     title: { es: "Dirección de Obra", en: "Construction Management" },
     description: {
-      es: "Los proyectos se desarrollan sin problemas, a tiempo y dentro del presupuesto. Coordinación con contratistas, seguimiento de cronogramas y mantenimiento de estándares de calidad en todas las fases de construcción.",
+      es: "Dirección y supervisión de obra para asegurar que los proyectos se desarrollen sin contratiempos, a tiempo y dentro del presupuesto. Coordinación con contratistas, seguimiento de cronogramas y control de calidad en cada fase de la construcción, garantizando que la ejecución se mantenga alineada con el proyecto definido.",
       en: "Projects run smoothly, on time, and within budget. Coordinating with contractors, monitoring schedules, and maintaining quality standards throughout all phases of construction.",
     },
   },
@@ -32,7 +32,7 @@ const services = [
     number: "04",
     title: { es: "Consultoría de Proyectos Inmobiliarios", en: "Real Estate Project Consultancy" },
     description: {
-      es: "Información basada en datos para proyectos inmobiliarios utilizando modelos BIM. Planificación de espacios, estimación de costos y análisis de rentabilidad de proyectos para apoyar la toma de decisiones informadas de desarrolladores e inversores.",
+      es: "Consultoría para proyectos inmobiliarios basada en información clara y estratégica que respalda la toma de decisiones. Análisis de espacios, estimación de costos y evaluación de la rentabilidad de cada proyecto, brindando apoyo a desarrolladores e inversores desde la planificación hasta la viabilidad del desarrollo.",
       en: "Data-driven insights for real estate projects using BIM models. Space planning, cost estimation, and project profitability analysis to support informed decision-making for developers and investors.",
     },
   },
